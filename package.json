@@ -1,5 +1,5 @@
 {
-  "name": "@iotame/interface",
+  "name": "@iotame/web",
   "version": "0.0.1",
   "description": "The official iotame frontend",
   "author": "Christopher Mühl <christopher@padarom.io>",
