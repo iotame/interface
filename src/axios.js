@@ -31,7 +31,13 @@ axios.interceptors.request.use(config => {
   return Promise.reject(error)
 })
 
-axios.interceptors.response.use(response => response, error => {
+axios.interceptors.response.use(response => {
+  if (response.headers['set-authorization']) {
+    jwtToken.setToken(response.headers['set-authorization'])
+  }
+
+  return response
+}, error => {
   let errorResponseData = error.response.data
 
   const errors = ['token_invalid', 'token_expired', 'token_not_provided']
