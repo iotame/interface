@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <router-view class="h-full" />
   </div>
 </template>
 
@@ -10,7 +9,7 @@ export default {
   name: 'App',
 
   mounted () {
-    this.$noty.show('Hello, world!')
+    // this.$noty.show('Hello, world!')
   }
 }
 </script>
