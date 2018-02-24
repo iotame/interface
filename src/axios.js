@@ -52,3 +52,12 @@ axios.interceptors.response.use(response => {
     return Promise.reject(error)
   }
 })
+
+axios.graphql = (method, query) => axios({
+  url: '/graphql',
+  method,
+  headers: { 'Content-Type': 'application/json' },
+  [method === 'get' ? 'params' : 'data']: query
+})
+
+export default axios

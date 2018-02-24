@@ -11,8 +11,8 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api': {
-        target: 'localhost:3030',
+      '/graphql': {
+        target: 'http://localhost:3030',
         changeOrigin: true
       }
     },
