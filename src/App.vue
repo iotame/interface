@@ -1,5 +1,9 @@
 <template>
   <div id="app" class="">
+    <div id="title">
+      iot<span class="lighter">ame</span>
+    </div>
+    <!--
     <div class="absolute pin-t pin-r pr-4 pt-6">
       <a @click="$modal.show('login')"
       class="bg-transparent hover:bg-blue text-blue-dark font-semibold hover:text-white py-2 px-4 border border-blue hover:border-transparent rounded cursor-pointer"
@@ -10,8 +14,9 @@
 
     <login-modal />
     <register-modal />
+    -->
 
-    <router-view class="h-full" />
+    <router-view />
   </div>
 </template>
 

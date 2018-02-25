@@ -21,5 +21,20 @@ body {
   height: 100%;
 }
 
+#title {
+  position: absolute;
+  top: 15px;
+  left: 28px;
+  user-select: none;
+
+  font-family: 'Bellefair', serif;
+  font-size: 50px;
+  color: #656B75;
+
+  .lighter {
+    color: #E6E8EC;
+  }
+}
+
 /* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind utilities;
