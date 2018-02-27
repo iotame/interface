@@ -1,13 +1,13 @@
 <template>
   <div class="">
     <div class="form">
-      <form>
+      <form @submit.prevent="tryLogin">
         <div class="inputs">
           <div class="input w-full">
-            <input class="w-full focus:no-outline" type="text" placeholder="Username" autocomplete="username">
+            <input class="w-full focus:no-outline" type="text" placeholder="Username" autocomplete="username" v-model="username">
           </div>
           <div class="input w-full">
-            <input class="w-full" type="password" placeholder="Password" autocomplete="current-password">
+            <input class="w-full" type="password" placeholder="Password" autocomplete="current-password" v-model="password">
           </div>
         </div>
 
@@ -21,8 +21,51 @@
 </template>
 
 <script>
-export default {
+import axios from '@/axios'
 
+export default {
+  data () {
+    return {
+      username: '',
+      password: ''
+    }
+  },
+
+  methods: {
+    async tryLogin () {
+      if (!this.username) {
+        return this.$noty.error('Please enter a username.')
+      }
+
+      if (!this.password) {
+        return this.$noty.error('Please enter a password.')
+      }
+
+      let input = { username: this.username, password: this.password }
+      let { data: response } = await axios.graphql('post', {
+        query: `
+          mutation ($input: AuthenticationInput!) {
+            login(input: $input) {
+              name
+              accessToken
+            }
+          }`,
+        variables: { input }
+      })
+
+      if (response.errors) {
+        let errors = response.errors[0].state
+        let error = (errors.username || errors.password)[0]
+
+        this.$noty.error(error)
+      }
+
+      this.$store.commit('setAuthUser', { name: response.data.name })
+      await this.$store.dispatch('setAuthToken', response.data.login.accessToken)
+
+      this.$router.push({ name: 'dashboard' })
+    }
+  }
 }
 </script>
 
@@ -38,6 +81,10 @@ export default {
 
   .form {
     width: 312px;
+  }
+
+  .error {
+    text-align: left;
   }
 
   .inputs {

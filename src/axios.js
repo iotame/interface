@@ -1,22 +1,9 @@
 import router from './router'
 import store from './store'
+import jwtToken from './token'
 
 import axios from 'axios'
 window.axios = axios
-
-const jwtToken = {
-  setToken (token) {
-    window.localStorage.setItem('_jwt_token', token)
-  },
-
-  getToken () {
-    return window.localStorage.getItem('_jwt_token')
-  },
-
-  removeToken () {
-    window.localStorage.removeItem('_jwt_token')
-  }
-}
 
 axios.interceptors.request.use(config => {
   // Set up CSRF Token: config.headers['X-CSRF-TOKEN'] = token
@@ -33,7 +20,7 @@ axios.interceptors.request.use(config => {
 
 axios.interceptors.response.use(response => {
   if (response.headers['set-authorization']) {
-    jwtToken.setToken(response.headers['set-authorization'])
+    store.commit('setAuthToken', response.headers['set-authorization'])
   }
 
   return response
