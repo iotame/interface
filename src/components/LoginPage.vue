@@ -4,10 +4,22 @@
       <form @submit.prevent="tryLogin">
         <div class="inputs">
           <div class="input w-full">
-            <input class="w-full focus:no-outline" type="text" placeholder="Username" autocomplete="username" v-model="username">
+            <input
+              class="w-full focus:no-outline"
+              type="text"
+              placeholder="Username"
+              autocomplete="username"
+              v-model="username"
+            >
           </div>
           <div class="input w-full">
-            <input class="w-full" type="password" placeholder="Password" autocomplete="current-password" v-model="password">
+            <input
+              class="w-full"
+              type="password"
+              placeholder="Password"
+              autocomplete="current-password"
+              v-model="password"
+            >
           </div>
         </div>
 
