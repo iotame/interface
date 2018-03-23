@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="">
     <div id="title">
-      iot<span class="lighter">ame</span>
+      <!--iot<span class="lighter">ame</span>-->
     </div>
 
     <router-view />

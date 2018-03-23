@@ -1,12 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import LoginPage from '@/components/LoginPage'
 import store from '@/store'
+import adminRoutes from './administration'
+import extensionRoutes from './extensions'
+
+import LoginPage from '@/components/LoginPage'
 
 Vue.use(Router)
 
+const lazy = (name) => import('@/components/' + name)
+
 const router = new Router({
   routes: [
+    ...extensionRoutes,
+
+    {
+      path: '/admin',
+      component: lazy('administration/Administration'),
+      children: adminRoutes
+    },
     {
       path: '/login',
       name: 'login',

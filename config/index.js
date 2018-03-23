@@ -14,6 +14,10 @@ module.exports = {
       '/graphql': {
         target: 'http://localhost:3030',
         changeOrigin: true
+      },
+      '/extensions.js': {
+        target: 'http://localhost:3030',
+        changeOrigin: true
       }
     },
 
