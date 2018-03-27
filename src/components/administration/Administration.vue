@@ -27,6 +27,14 @@
 
       <router-link
         class="link"
+        :to="{ name: 'admin.extensions' }"
+        tag="div"
+      >
+        <font-awesome-icon icon="plug" size="2x" />
+      </router-link>
+
+      <router-link
+        class="link"
         :to="{ name: 'admin.settings' }"
         tag="div"
       >

@@ -19,6 +19,11 @@ export default [
     component: lazy('UserList')
   },
   {
+    path: 'extensions',
+    name: 'admin.extensions',
+    component: lazy('Extensions')
+  },
+  {
     path: 'settings',
     name: 'admin.settings',
     component: lazy('Settings')
