@@ -20,7 +20,7 @@ const router = new Router({
       component: lazy('administration/Administration'),
       children: adminRoutes,
       beforeEnter (to, from, next) {
-        if (false) return next(false) // If not an administrator
+        // if (false) return next(false) // If not an administrator
         next()
       }
     },

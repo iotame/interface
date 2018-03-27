@@ -3,7 +3,7 @@
     <nav class="navigation">
       <router-link
         class="link"
-        to="admin"
+        :to="{ name: 'admin' }"
         tag="div"
       >
         <font-awesome-icon icon="home" size="2x" />
@@ -11,7 +11,7 @@
 
       <router-link
         class="link"
-        to="login"
+        :to="{ name: 'admin.devices' }"
         tag="div"
       >
         <font-awesome-icon icon="microchip" size="2x" />
@@ -19,7 +19,7 @@
 
       <router-link
         class="link"
-        to="admin"
+        :to="{ name: 'admin.users' }"
         tag="div"
       >
         <font-awesome-icon icon="users" size="2x" />
@@ -27,7 +27,7 @@
 
       <router-link
         class="link"
-        to="admin"
+        :to="{ name: 'admin.settings' }"
         tag="div"
       >
         <font-awesome-icon icon="cogs" size="2x" />
