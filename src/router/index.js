@@ -5,11 +5,12 @@ import adminRoutes from './administration'
 import extensionRoutes from './extensions'
 
 import LoginPage from '@/components/LoginPage'
-import administration from '@/components/administration/Administration'
 
 Vue.use(Router)
 
-const lazy = (name) => import('@/components/' + name)
+const lazy = (name) => {
+  return () => import('@/components/' + name)
+}
 
 const router = new Router({
   routes: [
@@ -17,12 +18,12 @@ const router = new Router({
 
     {
       path: '/admin',
-      component: administration, // lazy('administration/Administration'),
+      component: lazy('administration/Administration'),
       children: adminRoutes
     },
     {
       path: '/login',
-      name: 'login',
+      name: lazy('login'),
       component: LoginPage
     }
   ]
