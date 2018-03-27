@@ -5,6 +5,7 @@ import adminRoutes from './administration'
 import extensionRoutes from './extensions'
 
 import LoginPage from '@/components/LoginPage'
+import administration from '@/components/administration/Administration'
 
 Vue.use(Router)
 
@@ -16,7 +17,7 @@ const router = new Router({
 
     {
       path: '/admin',
-      component: lazy('administration/Administration'),
+      component: administration, // lazy('administration/Administration'),
       children: adminRoutes
     },
     {
