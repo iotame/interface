@@ -4,8 +4,6 @@ import store from '@/store'
 import adminRoutes from './administration'
 import extensionRoutes from './extensions'
 
-import LoginPage from '@/components/LoginPage'
-
 Vue.use(Router)
 
 const lazy = (name) => {
@@ -13,6 +11,7 @@ const lazy = (name) => {
 }
 
 const router = new Router({
+  mode: 'history',
   routes: [
     ...extensionRoutes,
 
@@ -27,8 +26,12 @@ const router = new Router({
     },
     {
       path: '/login',
-      name: lazy('login'),
-      component: LoginPage
+      name: 'login',
+      component: lazy('LoginPage')
+    },
+    {
+      path: '*',
+      component: lazy('NotFoundComponent')
     }
   ],
 

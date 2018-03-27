@@ -11,7 +11,7 @@
 
       <router-link
         class="link"
-        to="admin"
+        to="login"
         tag="div"
       >
         <font-awesome-icon icon="microchip" size="2x" />
@@ -64,6 +64,11 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      color: #3D546B;
+    }
   }
 }
 </style>
