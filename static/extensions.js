@@ -1,0 +1,3 @@
+window.EXTENSIONS = {
+  loaded: false
+}
