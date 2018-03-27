@@ -19,14 +19,25 @@ const router = new Router({
     {
       path: '/admin',
       component: lazy('administration/Administration'),
-      children: adminRoutes
+      children: adminRoutes,
+      beforeEnter (to, from, next) {
+        if (false) return next(false) // If not an administrator
+        next()
+      }
     },
     {
       path: '/login',
       name: lazy('login'),
       component: LoginPage
     }
-  ]
+  ],
+
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) return savedPosition
+    if (to.hash) return { selector: to.hash }
+
+    return { x: 0, y: 0 }
+  }
 })
 
 router.beforeEach((to, from, next) => {
