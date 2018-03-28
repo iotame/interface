@@ -3,18 +3,18 @@
     <nav class="navigation">
       <router-link
         class="link"
-        :to="{ name: 'admin' }"
-        tag="div"
-      >
-        <font-awesome-icon icon="home" class="icon" /> Dashboard
-      </router-link>
-
-      <router-link
-        class="link"
         :to="{ name: 'admin.devices' }"
         tag="div"
       >
         <font-awesome-icon icon="microchip" class="icon" /> Devices
+      </router-link>
+
+      <router-link
+        class="link"
+        :to="{ name: 'admin.rooms' }"
+        tag="div"
+      >
+        <font-awesome-icon icon="home" class="icon" /> Rooms
       </router-link>
 
       <router-link

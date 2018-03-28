@@ -1,15 +1,22 @@
 <template>
   <div>
-    <div v-for="user in users" :key="user.login">
-      <div>{{ user.name }} ({{ user.login }})</div>
+    <div class="users">
+      <user-list-item
+        v-for="user in users"
+        :key="user.login"
+        :user="user"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import gql from 'graphql-tag'
+import UserListItem from './UserListItem'
 
 export default {
+  components: { UserListItem },
+
   apollo: {
     users: {
       query: gql`{

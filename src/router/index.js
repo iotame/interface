@@ -17,7 +17,7 @@ const router = new Router({
 
     {
       path: '/admin',
-      component: lazy('administration/Administration'),
+      component: lazy('PageAdministration'),
       children: adminRoutes,
       beforeEnter (to, from, next) {
         // if (false) return next(false) // If not an administrator
@@ -27,11 +27,11 @@ const router = new Router({
     {
       path: '/login',
       name: 'login',
-      component: lazy('LoginPage')
+      component: lazy('PageLogin')
     },
     {
       path: '*',
-      component: lazy('NotFoundComponent')
+      component: lazy('PageNotFound')
     }
   ],
 

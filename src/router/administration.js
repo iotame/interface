@@ -4,14 +4,14 @@ const lazy = (name) => {
 
 export default [
   {
-    path: '/',
-    name: 'admin',
-    component: lazy('Dashboard')
-  },
-  {
     path: 'devices',
     name: 'admin.devices',
     component: lazy('DeviceList')
+  },
+  {
+    path: 'rooms',
+    name: 'admin.rooms',
+    component: lazy('RoomList')
   },
   {
     path: 'users',
@@ -21,7 +21,7 @@ export default [
   {
     path: 'extensions',
     name: 'admin.extensions',
-    component: lazy('Extensions')
+    component: lazy('ExtensionList')
   },
   {
     path: 'settings',
