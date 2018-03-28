@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import store from './store'
 import router from './router'
+import apolloProvider from './apollo'
 import VueNoty from 'vuejs-noty'
 import VModal from 'vue-js-modal'
 
@@ -21,6 +22,7 @@ new Vue({
   el: '#app',
   router,
   store,
+  provide: apolloProvider.provide(),
   components: { App },
   template: '<App/>'
 })
