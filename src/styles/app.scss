@@ -1,8 +1,6 @@
 @import '_variables';
 @import '~vuejs-noty/dist/vuejs-noty';
-
-/* stylelint-disable-next-line at-rule-no-unknown */
-@tailwind preflight;
+@import '~bulma';
 
 html, body {
   height: 100%;
@@ -36,6 +34,3 @@ body {
     color: #E6E8EC;
   }
 }
-
-/* stylelint-disable-next-line at-rule-no-unknown */
-@tailwind utilities;

@@ -9,13 +9,11 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
   name: 'App',
 
   mounted () {
-    axios.get('http://localhost:3030')
+    // axios.get('http://localhost:3030')
     // this.$noty.show('Hello, world!')
   }
 }
